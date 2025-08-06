@@ -160,6 +160,7 @@ nav ul li a.active::after {
 .projects-section {
     padding: 80px 20px;
     min-height: 100vh;
+    background-color: #111;
 }
 
 .container {
@@ -171,6 +172,93 @@ nav ul li a.active::after {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 50px;
+    color: #fff;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Project Card Styles */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255, 62, 62, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 62, 62, 0.5);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.card:hover img {
+    filter: brightness(0.3);
+}
+
+.card .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.card:hover .container {
+    opacity: 1;
+}
+
+.card h4 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.card:hover h4 {
+    transform: translateY(0);
+}
+
+.card p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    transform: translateY(20px);
+    transition: transform 0.3s ease 0.1s;
+}
+
+.card:hover p {
+    transform: translateY(0);
 }
 
 /* Contact Section */
@@ -193,7 +281,7 @@ nav ul li a.active::after {
     margin: 0 -15px;
 }
 
-.g-4 > * {
+.g-4>* {
     padding: 0 15px;
     margin-bottom: 30px;
 }
@@ -256,7 +344,7 @@ nav ul li a.active::after {
     margin-top: 50px;
 }
 
-.g-3 > * {
+.g-3>* {
     padding: 0 10px;
     margin-bottom: 20px;
 }
@@ -365,6 +453,15 @@ footer {
         font-size: 1.8rem;
     }
 
+    .projects-section h2 {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
     .contact-section {
         padding: 50px 20px;
         background-color: #111;
@@ -384,7 +481,7 @@ footer {
         font-size: 2rem;
     }
 
-    .g-3 > * {
+    .g-3>* {
         padding: 0 5px;
     }
 
@@ -396,4 +493,6 @@ footer {
         width: 100%;
         padding: 12px 30px;
     }
+
+
 }
