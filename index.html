@@ -1,114 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mounir Elsrogy | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="about.css" />
 </head>
 
-<!-- body -->
-
 <body>
-    <div id="container">
-        <!-- Header & Navigation -->
-        <header>
-            <div class="container">
-                <a href="#" class="logo">Mounir Elsrogy</a>
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="#home" class="nav-link active">Home</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#projects" class="nav-link">Projects</a></li>
-                        <li><a href="#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                </nav>
-            </div>
-        </header>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">Mounir Elsrogy</div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Full-page About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2 class="about-title">Who am I?</h2>
 
-        <section class="about-section">
-            <div class="container">
-                <h2 class="section-title">Who am i ?</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="img/1.jpeg" alt="Mounir Elsrogy">
+                </div>
 
-                <div class="about-content">
-                    <div class="profile-image">
-                        <img src="your-photo.jpg" alt="Your Name">
-                    </div>
+                <div class="about-text">
+                    <h3>I'm Mounir Elsrogy</h3>
 
-                    <div class="about-text">
-                        <h3>I'm Your Name</h3>
+                    <p>Hi! My name is Mounir Elsrogy. I am a web developer/designer, and I'm very passionate and
+                        dedicated to my work. With X years experience as a professional designer, I have acquired the
+                        skills and knowledge necessary to make your project a success.</p>
 
-                        <p>Hi! My name is Your Name. I am a web developer/designer, and I'm very passionate and
-                            dedicated to my work. With X years experience as a professional designer, I have acquired
-                            the skills and knowledge necessary to make your project a success.</p>
+                    <p>I enjoy every step of the design process, from discussion and collaboration to concept and
+                        execution, but I find the most satisfaction in seeing the finished product do everything for you
+                        that it was created to do. Take a look at my work and if you'd like to discuss your project,
+                        please let me know.</p>
 
-                        <p>I enjoy every step of the design process, from discussion and collaboration to concept and
-                            execution, but I find the most satisfaction in seeing the finished product do everything for
-                            you that it was created to do. Take a look at my work and if you'd like to discuss your
-                            project, please let me know.</p>
-
-                        <div class="social-links">
-                            <span>Share:</span>
-                            <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
-                            <a href="#" class="social-icon"><i class="fa fa-pinterest"></i></a>
-                        </div>
+                    <div class="social-links">
+                        <span>Share:</span>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="projects">
-            <h2>projects</h2>
-            <ul>
-                <li><a href="#project1">project 1</a></li>
-                <li><a href="#project2">project 2</a></li>
-                <li><a href="#project3">project 3</a></li>
-            </ul>
-        </section>
+    <!-- Projects Section (will scroll below) -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Projects</h2>
+            <!-- Your projects content here -->
+        </div>
+    </section>
 
-        <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
             <h2>Contact</h2>
-            <p>GitHub: <a href="https://github.com/M9nx">M9nx</a></p>
-            <p>If you'd like to get in touch, feel free to reach out via email or connect with me on <a
-                    href="#contact">LinkedIn</a>.</p>
-        </section>
+            <!-- Your contact content here -->
+        </div>
+    </section>
 
-
-        <footer>
-            <p>&copy; <span id="year"></span> Mounir Elsrogy. All Rights Reserved.</p>
-        </footer>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    </script>
-
+    <footer>
+        <p>&copy; 2025 Mounir Elsrogy. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
