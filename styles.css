@@ -795,6 +795,7 @@ footer {
 
 .section-1 {
     background-color: var(--bg-color);
+    padding-top: 100px;
 }
 
 .section-2 {
@@ -1168,6 +1169,10 @@ footer {
 
     .about-section {
         padding: 120px 20px 60px 20px;
+    }
+
+    .section-1 {
+        padding-top: 120px;
     }
 
     .about-title {
