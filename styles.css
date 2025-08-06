@@ -25,8 +25,9 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    background-color: rgba(17, 17, 17, 0.95);
+    background-color: rgba(0, 0, 0, 0.95);
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo {
@@ -108,8 +109,18 @@ nav ul li a.active::after {
 
 .about-image img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 3px solid #ff3e3e;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(255, 62, 62, 0.4);
+    border-color: #ff6b6b;
 }
 
 .about-text {
