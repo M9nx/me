@@ -411,6 +411,29 @@ footer {
     background-color: #0a0a0a;
 }
 
+/* Project Detail Page */
+.project-detail-section {
+    padding: 120px 20px 80px;
+    min-height: 100vh;
+    background-color: #111;
+}
+
+.project-detail-section h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.project-detail-section p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .about-content {
