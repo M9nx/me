@@ -182,7 +182,7 @@ nav ul li a.active::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px;
+    padding: 100px 20px 60px 20px;
     background-color: var(--bg-color);
     transition: background-color 0.3s ease;
 }
@@ -274,6 +274,120 @@ nav ul li a.active::after {
 .social-icon:hover {
     color: var(--accent-color);
     background-color: var(--card-bg-hover);
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 60px 20px;
+    min-height: 80vh;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
+}
+
+.skills-section .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.skills-section .section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+    transition: color 0.3s ease;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    background: var(--card-bg-hover);
+    border-color: var(--border-hover);
+    box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.skill-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.skill-card:hover .skill-icon {
+    background: var(--accent-hover);
+    transform: scale(1.1);
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.skill-card p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.skill-list li i {
+    color: #4ade80;
+    margin-right: 12px;
+    font-size: 0.9rem;
+}
+
+.skill-list li:hover {
+    color: var(--accent-color);
 }
 
 /* Projects Section */
@@ -413,21 +527,24 @@ nav ul li a.active::after {
 
 /* Larger cards for writeups section */
 .writeups-section .card {
-    min-height: 600px;
     height: auto;
     transform-origin: center;
     padding: 0;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .writeups-section .card img {
-    height: 400px;
-    object-fit: cover;
-    width: 100%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    display: block;
 }
 
 .writeups-section .card .container {
-    padding: 40px;
-    height: 200px;
+    padding: 30px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -437,6 +554,17 @@ nav ul li a.active::after {
 .writeups-section .card h4 {
     font-size: 1.8rem;
     margin-bottom: 20px;
+}
+
+.writeups-section .card h4 a {
+    color: #ff3e3e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.writeups-section .card h4 a:hover {
+    color: #ff6b6b;
+    text-decoration: underline;
 }
 
 .writeups-section .card p {
@@ -873,6 +1001,16 @@ footer {
         margin-right: auto;
     }
 
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .skill-card {
+        padding: 30px 25px;
+    }
+
     .writeups-grid {
         grid-template-columns: 1fr;
         gap: 50px;
@@ -881,20 +1019,35 @@ footer {
     }
 
     .writeups-section .card {
-        min-height: 520px;
+        height: auto;
+        width: fit-content;
+        max-width: 100%;
     }
 
     .writeups-section .card img {
-        height: 320px;
+        width: auto;
+        height: auto;
+        max-width: 100%;
     }
 
     .writeups-section .card .container {
-        padding: 35px;
-        height: 200px;
+        padding: 30px;
+        height: auto;
     }
 
     .writeups-section .card h4 {
         font-size: 1.7rem;
+    }
+
+    .writeups-section .card h4 a {
+        color: #ff3e3e;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .writeups-section .card h4 a:hover {
+        color: #ff6b6b;
+        text-decoration: underline;
     }
 
     .writeups-section .card p {
@@ -922,12 +1075,47 @@ footer {
         margin-right: 1rem;
     }
 
+    .about-section {
+        padding: 120px 20px 60px 20px;
+    }
+
     .about-title {
         font-size: 2rem;
     }
 
     .about-text h3 {
         font-size: 1.8rem;
+    }
+
+    .skills-section {
+        padding: 40px 20px;
+    }
+
+    .skills-section .section-title {
+        font-size: 2rem;
+    }
+
+    .skills-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 10px;
+    }
+
+    .skill-card {
+        padding: 25px 20px;
+    }
+
+    .skill-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .skill-card p {
+        font-size: 0.9rem;
     }
 
     .projects-section h2 {
@@ -951,21 +1139,36 @@ footer {
     }
 
     .writeups-section .card {
-        min-height: 450px;
+        height: auto;
+        width: fit-content;
+        max-width: 100%;
     }
 
     .writeups-section .card img {
-        height: 280px;
+        width: auto;
+        height: auto;
+        max-width: 100%;
     }
 
     .writeups-section .card .container {
-        padding: 30px;
-        height: 170px;
+        padding: 25px;
+        height: auto;
     }
 
     .writeups-section .card h4 {
         font-size: 1.6rem;
         margin-bottom: 15px;
+    }
+
+    .writeups-section .card h4 a {
+        color: #ff3e3e;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .writeups-section .card h4 a:hover {
+        color: #ff6b6b;
+        text-decoration: underline;
     }
 
     .writeups-section .card p {
