@@ -1013,7 +1013,7 @@ footer {
     display: flex;
     width: 100%;
     height: 65%;
-    gap: 0;
+    gap: 20px;
 }
 
 .feature-category {
@@ -1035,7 +1035,7 @@ footer {
 }
 
 .feature-category.half-width {
-    width: 50%;
+    width: calc(50% - 10px);
     height: 100%;
 }
 
@@ -1247,6 +1247,18 @@ footer {
     font-size: 0.9rem;
 }
 
+.tool-purpose .api-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.tool-purpose .api-link:hover {
+    color: #ff6b6b;
+    text-decoration: underline;
+}
+
 /* Responsive Design for Split Layout */
 @media (max-width: 1024px) {
     .section-content-split {
@@ -1318,15 +1330,35 @@ footer {
         height: auto;
     }
 
+    .pegpon-features h1 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
     .feature-grid {
         flex-direction: column;
         gap: 20px;
     }
 
+    .top-section {
+        height: auto;
+    }
+
+    .bottom-section {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .feature-category.full-width,
+    .feature-category.half-width {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .feature-category {
         padding: 25px 20px;
         min-height: auto;
-        max-width: 100%;
     }
 
     .feature-category h2 {
@@ -1335,6 +1367,79 @@ footer {
 
     .requirements-table {
         font-size: 0.95rem;
+    }
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    /* General section responsive - Tablet */
+    .fullpage-section {
+        padding: 30px 20px;
+    }
+
+    .section-content {
+        padding: 0 30px;
+    }
+
+    .section-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+
+    /* Section 1 responsive - Tablet */
+    .section-content-split {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 30px;
+    }
+
+    .left-content,
+    .right-content {
+        flex: 0 0 100%;
+    }
+
+    .pegpon-logo h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .ascii-art {
+        display: flex;
+        justify-content: center;
+    }
+
+    .ascii-art pre {
+        font-size: 1rem;
+        line-height: 1.1;
+    }
+
+    .description-text {
+        padding: 25px;
+        text-align: center;
+    }
+
+    .description-text p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    /* Section 3 & 4 responsive - Tablet */
+    .section-3 .section-content,
+    .section-4 .section-content {
+        padding: 60px 40px;
+    }
+
+    .section-3 h1,
+    .section-4 h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-3 p,
+    .section-4 p {
+        font-size: 1.3rem;
+        max-width: 800px;
     }
 }
 
@@ -1367,33 +1472,58 @@ footer {
     }
 
     .pegpon-features {
-        padding: 0 20px;
+        padding: 0 15px;
+        height: auto;
     }
 
     .pegpon-features h1 {
-        font-size: 2rem;
-        margin-bottom: 40px;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
     }
 
     .feature-grid {
         flex-direction: column;
-        gap: 25px;
+        gap: 15px;
+    }
+
+    .top-section,
+    .bottom-section {
+        height: auto;
+    }
+
+    .bottom-section {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .feature-category {
-        padding: 25px 20px;
+        padding: 20px 15px;
         max-width: 100%;
     }
 
-    .feature-category h2 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
+    .feature-category.full-width,
+    .feature-category.half-width {
+        width: 100%;
     }
 
-    .api-item {
-        flex-direction: column;
+    .feature-category h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .feature-item {
+        padding: 10px;
+        font-size: 0.9rem;
         gap: 10px;
-        text-align: center;
+    }
+
+    .feature-item i {
+        font-size: 1rem;
+    }
+
+    .requirements-intro {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
     }
 
     .table-header,
@@ -1407,8 +1537,273 @@ footer {
         border-bottom: 1px solid var(--border-color);
     }
 
+    .header-cell:last-child {
+        border-top: 1px solid var(--border-color);
+    }
+
     .tool-purpose {
         padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tool-name {
+        font-size: 0.85rem;
+        padding: 10px 15px;
+    }
+
+    .tool-purpose {
+        font-size: 0.85rem;
+        padding: 10px 15px;
+    }
+
+    /* General section responsive - Mobile */
+    .fullpage-section {
+        padding: 20px 15px;
+        min-height: auto;
+    }
+
+    .section-content {
+        padding: 0 15px;
+    }
+
+    .section-content h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .section-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Section 1 responsive - Mobile */
+    .section-1 {
+        padding-top: 100px;
+    }
+
+    .section-content-split {
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px 15px;
+    }
+
+    .left-content {
+        order: 1;
+    }
+
+    .right-content {
+        order: 2;
+    }
+
+    .pegpon-logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .pegpon-logo h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .ascii-art {
+        margin-bottom: 20px;
+    }
+
+    .ascii-art pre {
+        font-size: 0.8rem;
+        line-height: 1.0;
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    .description-text {
+        padding: 15px 10px;
+        text-align: left;
+    }
+
+    .description-text p {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+
+    /* Section 3 & 4 responsive - Mobile */
+    .section-3,
+    .section-4 {
+        padding: 40px 0;
+    }
+
+    .section-3 .section-content,
+    .section-4 .section-content {
+        padding: 30px 20px;
+    }
+
+    .section-3 h1,
+    .section-4 h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .section-3 p,
+    .section-4 p {
+        font-size: 1.1rem;
+        max-width: 100%;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+}
+
+/* Extra small screens - mobile responsive */
+@media (max-width: 480px) {
+    .pegpon-features h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .feature-category {
+        padding: 15px 10px;
+        border-radius: 15px;
+    }
+
+    .feature-category h2 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .feature-item {
+        padding: 8px;
+        font-size: 0.85rem;
+        border-radius: 6px;
+    }
+
+    .requirements-intro {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    .header-cell {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+
+    .tool-name,
+    .tool-purpose {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    .ascii-art pre {
+        font-size: 0.7rem;
+        line-height: 0.9;
+    }
+
+    .description-text p {
+        font-size: 1rem;
+    }
+
+    /* Hamburger menu adjustments */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background-color: var(--card-bg);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        border-top: 2px solid var(--border-color);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+    }
+
+    .nav-menu li a {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+
+    /* General section responsive design */
+    .fullpage-section {
+        min-height: 100vh;
+        padding: 20px 10px;
+    }
+
+    .section-content {
+        padding: 0 20px;
+        max-width: 100%;
+    }
+
+    .section-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .section-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Section 1 responsive */
+    .section-content-split {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px 15px;
+    }
+
+    .left-content,
+    .right-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .pegpon-logo h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .ascii-art pre {
+        font-size: 0.7rem;
+        line-height: 0.9;
+        overflow-x: auto;
+        white-space: pre;
+    }
+
+    .description-text {
+        padding: 15px;
+    }
+
+    .description-text p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    /* Section 3 & 4 responsive */
+    .section-3 .section-content,
+    .section-4 .section-content {
+        padding: 40px 20px;
+    }
+
+    .section-3 h1,
+    .section-4 h1 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .section-3 p,
+    .section-4 p {
+        font-size: 1.1rem;
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
 
