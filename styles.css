@@ -385,7 +385,7 @@ nav ul li a.active::after {
 
 /* Writeups Section */
 .writeups-section {
-    padding: 80px 20px;
+    padding: 40px 20px 80px 20px;
     min-height: 100vh;
     background-color: var(--bg-color);
     transition: background-color 0.3s ease;
@@ -402,17 +402,50 @@ nav ul li a.active::after {
 /* Writeups Grid */
 .writeups-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-    max-width: 800px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    margin-top: 80px;
+    max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 40px;
+}
+
+/* Larger cards for writeups section */
+.writeups-section .card {
+    min-height: 600px;
+    height: auto;
+    transform-origin: center;
+    padding: 0;
+}
+
+.writeups-section .card img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.writeups-section .card .container {
+    padding: 40px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.writeups-section .card h4 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.writeups-section .card p {
+    font-size: 1.2rem;
 }
 
 /* Contact Section */
 .contact-section {
-    padding: 80px 20px;
+    padding: 40px 20px 80px 20px;
     min-height: 100vh;
     background-color: var(--bg-color);
     transition: background-color 0.3s ease;
@@ -839,6 +872,34 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .writeups-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        max-width: 800px;
+        padding: 0 30px;
+    }
+
+    .writeups-section .card {
+        min-height: 520px;
+    }
+
+    .writeups-section .card img {
+        height: 320px;
+    }
+
+    .writeups-section .card .container {
+        padding: 35px;
+        height: 200px;
+    }
+
+    .writeups-section .card h4 {
+        font-size: 1.7rem;
+    }
+
+    .writeups-section .card p {
+        font-size: 1.15rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -884,11 +945,35 @@ footer {
 
     .writeups-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 40px;
+        padding: 0 20px;
+        margin-top: 50px;
+    }
+
+    .writeups-section .card {
+        min-height: 450px;
+    }
+
+    .writeups-section .card img {
+        height: 280px;
+    }
+
+    .writeups-section .card .container {
+        padding: 30px;
+        height: 170px;
+    }
+
+    .writeups-section .card h4 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .writeups-section .card p {
+        font-size: 1.1rem;
     }
 
     .contact-section {
-        padding: 50px 20px;
+        padding: 30px 20px 50px 20px;
         background-color: #111;
     }
 
