@@ -818,6 +818,12 @@ footer {
     transition: color 0.3s ease;
 }
 
+.section-2 .section-content {
+    max-width: 100vw;
+    padding: 0;
+    width: 100vw;
+}
+
 .section-content h1 {
     font-size: 3rem;
     margin-bottom: 30px;
@@ -965,13 +971,14 @@ footer {
 
 /* PEGPON Features Section */
 .pegpon-features {
-    width: 100%;
+    width: 100vw;
     max-width: 100vw;
     margin: 0;
-    padding: 0 15px;
-    height: calc(100vh - 80px);
+    padding: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .pegpon-features h1 {
@@ -982,26 +989,62 @@ footer {
     font-weight: 700;
     transition: color 0.3s ease;
     flex-shrink: 0;
+    padding: 0 20px;
 }
 
 .feature-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     flex: 1;
     height: 100%;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.top-section {
+    display: flex;
+    width: 100%;
+    height: 35%;
+}
+
+.bottom-section {
+    display: flex;
+    width: 100%;
+    height: 65%;
+    gap: 0;
 }
 
 .feature-category {
     background: var(--card-bg);
     border-radius: 20px;
-    padding: 30px;
+    padding: 25px;
     border: 2px solid var(--border-color);
     box-shadow: 0 15px 30px var(--shadow-color);
     transition: all 0.3s ease;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.feature-category.full-width {
+    width: 100%;
+    height: 100%;
+}
+
+.feature-category.half-width {
+    width: 50%;
+    height: 100%;
+}
+
+.feature-category:first-child {
+    margin-left: 0;
+}
+
+.feature-category:last-child {
+    margin-right: 0;
 }
 
 .feature-category:hover {
@@ -1034,9 +1077,10 @@ footer {
 
 .api-list {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    flex-wrap: wrap;
+    gap: 15px;
     flex: 1;
+    justify-content: space-between;
 }
 
 .requirements-intro {
@@ -1095,13 +1139,17 @@ footer {
 
 .api-item {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
     padding: 15px;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
 }
 
 .api-item:hover {
@@ -1239,6 +1287,7 @@ footer {
     .pegpon-features {
         padding: 0 15px;
         max-width: 100%;
+        height: auto;
     }
 
     .pegpon-features h1 {
@@ -1246,13 +1295,14 @@ footer {
     }
 
     .feature-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 30px;
     }
 
     .feature-category {
         padding: 30px;
         min-height: auto;
+        max-width: 100%;
     }
 
     .requirements-table {
@@ -1265,16 +1315,18 @@ footer {
     .pegpon-features {
         padding: 0 15px;
         max-width: 100%;
+        height: auto;
     }
 
     .feature-grid {
-        grid-template-columns: 1fr 1fr;
+        flex-direction: column;
         gap: 20px;
     }
 
     .feature-category {
         padding: 25px 20px;
         min-height: auto;
+        max-width: 100%;
     }
 
     .feature-category h2 {
@@ -1324,12 +1376,13 @@ footer {
     }
 
     .feature-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 25px;
     }
 
     .feature-category {
         padding: 25px 20px;
+        max-width: 100%;
     }
 
     .feature-category h2 {
