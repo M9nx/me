@@ -15,14 +15,23 @@
     <!-- Header & Navigation -->
     <header>
         <div class="logo">Mounir Elsrogy</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch-checkbox" />
+                <label for="theme-switch" class="theme-switch-label">
+                    <span class="theme-icon sun-icon"><i class="fas fa-sun"></i></span>
+                    <span class="theme-icon moon-icon"><i class="fas fa-moon"></i></span>
+                </label>
+            </div>
+        </div>
     </header>
 
     <!-- Section 1 -->
@@ -55,7 +64,8 @@
                         workflows that would typically require manual coordination of multiple tools, making it an
                         essential asset for security researchers and bug bounty hunters.</p>
 
-                    <p>Created by <a  href="https://github.com/M9nx" class="highlight">@M9nx</a> specifically for bug bounty hunting and
+                    <p>Created by <a href="https://github.com/M9nx" class="highlight">@M9nx</a> specifically for bug
+                        bounty hunting and
                         penetration testing workflows, with continuous updates and improvements based on real-world
                         testing scenarios.</p>
                 </div>
