@@ -6,53 +6,108 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="about.css" />
 </head>
 
+<!-- body -->
 
 <body>
+    <div id="container">
+        <!-- Header & Navigation -->
+        <header>
+            <div class="container">
+                <a href="#" class="logo">Mounir Elsrogy</a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
 
-    <header>
-        <h1>welcome to my portfolio</h1>
+        <section class="about-section">
+            <div class="container">
+                <h2 class="section-title">Who am i ?</h2>
 
-        <nav>
+                <div class="about-content">
+                    <div class="profile-image">
+                        <img src="your-photo.jpg" alt="Your Name">
+                    </div>
+
+                    <div class="about-text">
+                        <h3>I'm Your Name</h3>
+
+                        <p>Hi! My name is Your Name. I am a web developer/designer, and I'm very passionate and
+                            dedicated to my work. With X years experience as a professional designer, I have acquired
+                            the skills and knowledge necessary to make your project a success.</p>
+
+                        <p>I enjoy every step of the design process, from discussion and collaboration to concept and
+                            execution, but I find the most satisfaction in seeing the finished product do everything for
+                            you that it was created to do. Take a look at my work and if you'd like to discuss your
+                            project, please let me know.</p>
+
+                        <div class="social-links">
+                            <span>Share:</span>
+                            <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>projects</h2>
             <ul>
-                <li><a href="#about">about</a></li>
-                <li><a href="#projects">projects</a></li>
-                <li><a href="#contact">contact</a></li>
+                <li><a href="#project1">project 1</a></li>
+                <li><a href="#project2">project 2</a></li>
+                <li><a href="#project3">project 3</a></li>
             </ul>
-        </nav>
-    </header>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>GitHub: <a href="https://github.com/M9nx">M9nx</a></p>
+            <p>If you'd like to get in touch, feel free to reach out via email or connect with me on <a
+                    href="#contact">LinkedIn</a>.</p>
+        </section>
 
 
-    <section id="me">
-        <h2>About me</h2>
-        <p>Security Researcher | C++ Dev | Problem Solver</p>
-        <p>Welcome to my portfolio! Here you can find information about my projects and how to contact me.</p>
-    </section>
+        <footer>
+            <p>&copy; <span id="year"></span> Mounir Elsrogy. All Rights Reserved.</p>
+        </footer>
+    </div>
 
-    <section id="projects">
-        <h2>projects</h2>
-        <ul>
-            <li><a href="#project1">project 1</a></li>
-            <li><a href="#project2">project 2</a></li>
-            <li><a href="#project3">project 3</a></li>
-        </ul>
-    </section>
+    <!-- JavaScript -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>GitHub: <a href="https://github.com/M9nx">M9nx</a></p>
-        <p>If you'd like to get in touch, feel free to reach out via email or connect with me on <a
-                href="#contact">LinkedIn</a>.</p>
-    </section>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
 
-    <footer>
-        <p>&copy; 2023 My Portfolio</p>
-        <p>All rights reserved.</p>
-    </footer>
-
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 
