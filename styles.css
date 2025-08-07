@@ -45,6 +45,9 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -53,6 +56,34 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Responsive media defaults */
+img,
+video,
+audio,
+iframe,
+object,
+embed {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Container responsive defaults */
+.container,
+.section-content,
+.section-content-split {
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Header & Navigation */
@@ -785,12 +816,13 @@ footer {
 
 /* Full Page Sections */
 .fullpage-section {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow-x: hidden;
 }
 
 .section-1 {
@@ -822,9 +854,10 @@ footer {
 }
 
 .section-2 .section-content {
-    max-width: 100vw;
+    max-width: 100%;
     padding: 0;
-    width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section-content h1 {
@@ -893,10 +926,10 @@ footer {
 }
 
 .pegpon-logo h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     color: var(--text-color);
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: clamp(20px, 3vw, 50px);
     font-weight: 700;
     transition: color 0.3s ease;
 }
@@ -904,11 +937,11 @@ footer {
 .ascii-art {
     background: var(--card-bg);
     border-radius: 25px;
-    padding: 25px 10px;
+    padding: clamp(15px, 2vw, 25px);
     border: 2px solid var(--border-color);
     box-shadow: 0 20px 40px var(--shadow-color);
     width: 100%;
-    max-width: 650px;
+    max-width: clamp(400px, 50vw, 650px);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -925,7 +958,7 @@ footer {
 .ascii-art pre {
     font-family: 'Courier New', monospace;
     color: var(--accent-color);
-    font-size: 1.1rem;
+    font-size: clamp(0.8rem, 1.2vw, 1.1rem);
     line-height: 1.0;
     margin: 0;
     white-space: pre;
@@ -940,12 +973,13 @@ footer {
 .description-text {
     background: var(--card-bg);
     border-radius: 25px;
-    padding: 60px;
+    padding: clamp(30px, 4vw, 60px);
     border: 2px solid var(--border-color);
     box-shadow: 0 20px 40px var(--shadow-color);
     width: 100%;
-    max-width: 650px;
+    max-width: clamp(400px, 50vw, 650px);
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .description-text:hover {
@@ -954,10 +988,10 @@ footer {
 }
 
 .description-text p {
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 1.4vw, 1.4rem);
     color: var(--text-secondary);
     line-height: 1.8;
-    margin: 0 0 25px 0;
+    margin: 0 0 clamp(15px, 2vw, 25px) 0;
     text-align: left;
     transition: color 0.3s ease;
 }
@@ -974,10 +1008,10 @@ footer {
 
 /* PEGPON Features Section */
 .pegpon-features {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -986,9 +1020,9 @@ footer {
 
 .pegpon-features h1 {
     text-align: center;
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
     color: var(--text-color);
-    margin-bottom: 40px;
+    margin-bottom: clamp(20px, 3vw, 40px);
     font-weight: 700;
     transition: color 0.3s ease;
     flex-shrink: 0;
@@ -1001,9 +1035,10 @@ footer {
     gap: 20px;
     flex: 1;
     height: 100%;
-    width: 100vw;
+    width: 100%;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .top-section {
@@ -1057,8 +1092,8 @@ footer {
 
 .feature-category h2 {
     color: var(--text-color);
-    font-size: 1.6rem;
-    margin-bottom: 25px;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    margin-bottom: clamp(15px, 2vw, 25px);
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1109,12 +1144,12 @@ footer {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px;
+    padding: clamp(8px, 1vw, 12px);
     background: rgba(255, 255, 255, 0.03);
     border-radius: 8px;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
 }
 
 .feature-item:hover {
@@ -1263,6 +1298,64 @@ footer {
 }
 
 /* Responsive Design for Split Layout */
+/* Large screens - handles zoom scenarios */
+@media (max-width: 1400px) {
+    .section-content-split {
+        gap: 60px;
+        padding: 40px 30px;
+    }
+
+    .pegpon-features {
+        padding: 0 30px;
+    }
+
+    .pegpon-features h1 {
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        margin-bottom: clamp(20px, 2.5vw, 35px);
+    }
+
+    .feature-category {
+        padding: 25px 20px;
+    }
+
+    .feature-category h2 {
+        font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    }
+
+    .table-header,
+    .table-row {
+        font-size: clamp(0.85rem, 1.2vw, 1rem);
+    }
+}
+
+/* Medium-large screens - zoom responsive */
+@media (max-width: 1200px) {
+    .section-content-split {
+        gap: 40px;
+        padding: 30px 25px;
+    }
+
+    .pegpon-features {
+        padding: 0 25px;
+    }
+
+    .pegpon-features h1 {
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+    }
+
+    .feature-category {
+        padding: 20px 15px;
+    }
+
+    .bottom-section {
+        gap: 15px;
+    }
+
+    .feature-category.half-width {
+        width: calc(50% - 7.5px);
+    }
+}
+
 @media (max-width: 1024px) {
     .section-content-split {
         flex-direction: column;
@@ -1458,6 +1551,211 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    /* Header and Navigation Mobile */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        position: relative;
+    }
+
+    .logo {
+        margin-bottom: 0;
+        z-index: 1001;
+    }
+
+    .nav-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hamburger {
+        display: flex;
+        order: 1;
+    }
+
+    .theme-toggle {
+        order: 2;
+    }
+
+    nav {
+        order: 0;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--header-bg);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+        padding: 2rem 0;
+        margin: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+
+    .nav-menu li a {
+        font-size: 1.1rem;
+        padding: 1rem;
+        display: block;
+    }
+
+    /* Main Portfolio Sections Mobile */
+    .about-section {
+        padding: 120px 20px 60px 20px;
+    }
+
+    .section-1 {
+        padding-top: 120px;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.8rem;
+    }
+
+    .skills-section {
+        padding: 40px 20px;
+    }
+
+    .skills-section .section-title {
+        font-size: 2rem;
+    }
+
+    .skills-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 10px;
+    }
+
+    .skill-card {
+        padding: 25px 20px;
+    }
+
+    .skill-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .skill-card p {
+        font-size: 0.9rem;
+    }
+
+    .projects-section h2 {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .writeups-section h2 {
+        font-size: 2rem;
+    }
+
+    .writeups-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 20px;
+        margin-top: 50px;
+    }
+
+    .writeups-section .card {
+        height: auto;
+        width: fit-content;
+        max-width: 100%;
+    }
+
+    .writeups-section .card img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .writeups-section .card .container {
+        padding: 25px;
+        height: auto;
+    }
+
+    .writeups-section .card h4 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .writeups-section .card h4 a {
+        color: #ff3e3e;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .writeups-section .card h4 a:hover {
+        color: #ff6b6b;
+        text-decoration: underline;
+    }
+
+    .writeups-section .card p {
+        font-size: 1.1rem;
+    }
+
+    /* Contact Section Mobile */
+    .contact-section {
+        padding: 20px 20px 40px 20px;
+        background-color: #111;
+    }
+
+    .col-md-4,
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-info {
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .g-3>* {
+        padding: 0 5px;
+    }
+
+    .contact-form {
+        margin-top: 30px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 30px;
+    }
+
+    /* PEGPON Project Page Mobile */
     .section-content-split {
         padding: 30px 20px;
         gap: 30px;
@@ -1679,6 +1977,49 @@ footer {
         margin: 0 auto;
         line-height: 1.6;
     }
+
+    /* Project Detail Page Mobile */
+    .project-detail-section h1 {
+        font-size: 2rem;
+    }
+
+    .feature-card {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+        margin-bottom: 40px;
+    }
+
+    .feature-card.reverse {
+        flex-direction: column;
+    }
+
+    .feature-image,
+    .feature-content {
+        flex: 0 0 100%;
+    }
+
+    .feature-image img {
+        height: 200px;
+    }
+
+    .feature-content h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .feature-content p {
+        text-align: center;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .technologies-section h2 {
+        font-size: 2rem;
+    }
 }
 
 /* Extra small screens - mobile responsive */
@@ -1861,12 +2202,469 @@ footer {
         max-width: 100%;
         margin: 0 auto;
     }
+
+    /* About section small screen */
+    .about-section {
+        padding: 100px 15px 40px;
+        min-height: auto;
+    }
+
+    .about-title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .about-text h3 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+
+    .about-image {
+        max-width: 400px;
+    }
+
+    /* Skills section small screen */
+    .skills-section {
+        padding: 30px 15px;
+    }
+
+    .skills-section .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
+    .skills-section .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+
+    .skill-card {
+        padding: 20px 15px;
+    }
+
+    .skill-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .skill-card p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .skill-icon {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 15px;
+    }
+
+    .skill-icon i {
+        font-size: 1.3rem;
+    }
+
+    .skill-list li {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    /* Projects section small screen */
+    .projects-section {
+        padding: 30px 15px;
+    }
+
+    .projects-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .card {
+        border-radius: 12px;
+    }
+
+    .card .container {
+        padding: 20px;
+    }
+
+    .card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    /* Writeups section small screen */
+    .writeups-section {
+        padding: 25px 15px 40px;
+    }
+
+    .writeups-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .writeups-grid {
+        gap: 30px;
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+
+    .writeups-section .card .container {
+        padding: 20px;
+    }
+
+    .writeups-section .card h4 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .writeups-section .card p {
+        font-size: 1rem;
+    }
+
+    /* Contact section small screen */
+    .contact-section {
+        padding: 25px 15px 35px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .contact-info {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .contact-info i {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
+    .contact-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    .form-control {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    /* Footer small screen */
+    footer {
+        padding: 1.2rem;
+        font-size: 0.85rem;
+    }
 }
 
 /* Responsive Design */
+/* Extra large screens */
+@media (max-width: 1400px) {
+    .about-section {
+        padding: 80px 20px 50px;
+    }
+
+    .about-content {
+        gap: 40px;
+    }
+
+    .about-title {
+        font-size: 2.3rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 35px;
+    }
+
+    .skill-card {
+        padding: 35px 25px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+    }
+
+    .writeups-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        padding: 0 30px;
+    }
+
+    .container {
+        max-width: 1100px;
+    }
+}
+
+/* Large screens */
+@media (max-width: 1200px) {
+    .about-section {
+        padding: 70px 20px 40px;
+    }
+
+    .about-content {
+        gap: 35px;
+    }
+
+    .about-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    .about-text h3 {
+        font-size: 1.7rem;
+    }
+
+    .skills-section {
+        padding: 50px 20px;
+    }
+
+    .skills-section .section-title {
+        font-size: 2.3rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .projects-section {
+        padding: 50px 20px;
+    }
+
+    .projects-section h2 {
+        font-size: 2.3rem;
+        margin-bottom: 40px;
+    }
+
+    .writeups-section {
+        padding: 30px 20px 50px;
+    }
+
+    .writeups-section h2 {
+        font-size: 2.3rem;
+        margin-bottom: 40px;
+    }
+
+    .contact-section {
+        padding: 30px 20px 50px;
+    }
+
+    .section-title {
+        font-size: 2.3rem;
+        margin-bottom: 40px;
+    }
+}
+
+/* Medium-large screens */
+@media (max-width: 1024px) {
+    .about-section {
+        padding: 100px 20px 50px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-image,
+    .about-text {
+        flex: 0 0 100%;
+    }
+
+    .about-image {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .writeups-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .contact-form {
+        margin-top: 40px;
+    }
+
+    /* Section 1 responsive for tablet */
+    .section-content-split {
+        flex-direction: column;
+        gap: 50px;
+        height: auto;
+        padding: 50px 30px;
+    }
+
+    .left-content,
+    .right-content {
+        flex: none;
+        width: 100%;
+    }
+
+    .pegpon-logo h1 {
+        font-size: 2.8rem;
+    }
+
+    .ascii-art,
+    .description-text {
+        max-width: 100%;
+        padding: 20px 15px;
+    }
+
+    .ascii-art pre {
+        font-size: 1.1rem;
+        line-height: 1.0;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .description-text p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .pegpon-features {
+        padding: 0 15px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .pegpon-features h1 {
+        font-size: 2.3rem;
+    }
+
+    .feature-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .feature-category {
+        padding: 30px;
+        min-height: auto;
+        max-width: 100%;
+    }
+
+    .requirements-table {
+        overflow-x: auto;
+    }
+}
+
+.about-content {
+    flex-direction: column;
+}
+
+.about-image,
+.about-text {
+    flex: 0 0 100%;
+}
+
+.about-image {
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.skill-card {
+    padding: 30px 25px;
+}
+
+.writeups-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    max-width: 800px;
+    padding: 0 30px;
+}
+
+.writeups-section .card {
+    height: auto;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.writeups-section .card img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+.writeups-section .card .container {
+    padding: 30px;
+    height: auto;
+}
+
+.writeups-section .card h4 {
+    font-size: 1.7rem;
+}
+
+.writeups-section .card h4 a {
+    color: #ff3e3e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.writeups-section .card h4 a:hover {
+    color: #ff6b6b;
+    text-decoration: underline;
+}
+
+.writeups-section .card p {
+    font-size: 1.15rem;
+}
+
+/* Tablet responsive design - 992px */
 @media (max-width: 992px) {
     .about-content {
         flex-direction: column;
+        text-align: center;
     }
 
     .about-image,
@@ -1881,6 +2679,10 @@ footer {
         margin-right: auto;
     }
 
+    .about-text {
+        text-align: center;
+    }
+
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
@@ -1889,6 +2691,11 @@ footer {
 
     .skill-card {
         padding: 30px 25px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
     }
 
     .writeups-grid {
@@ -1933,252 +2740,26 @@ footer {
     .writeups-section .card p {
         font-size: 1.15rem;
     }
-}
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 5%;
-        position: relative;
-    }
-
-    .logo {
-        margin-bottom: 0;
-        z-index: 1001;
-    }
-
-    .nav-container {
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .hamburger {
-        display: flex;
-        order: 1;
-    }
-
-    .theme-toggle {
-        order: 2;
-    }
-
-    nav {
-        order: 0;
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--header-bg);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--border-color);
-        z-index: 1000;
-        padding: 2rem 0;
-        margin: 0;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-menu li {
-        margin: 1rem 0;
-    }
-
-    .nav-menu li a {
-        font-size: 1.1rem;
-        padding: 1rem;
-        display: block;
-    }
-
-    .about-section {
-        padding: 120px 20px 60px 20px;
-    }
-
-    .section-1 {
-        padding-top: 120px;
-    }
-
-    .about-title {
-        font-size: 2rem;
-    }
-
-    .about-text h3 {
-        font-size: 1.8rem;
-    }
-
-    .skills-section {
-        padding: 40px 20px;
-    }
-
-    .skills-section .section-title {
-        font-size: 2rem;
-    }
-
-    .skills-section .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 40px;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 0 10px;
-    }
-
-    .skill-card {
-        padding: 25px 20px;
-    }
-
-    .skill-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .skill-card p {
-        font-size: 0.9rem;
-    }
-
-    .projects-section h2 {
-        font-size: 2rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .writeups-section h2 {
-        font-size: 2rem;
-    }
-
-    .writeups-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 0 20px;
-        margin-top: 50px;
-    }
-
-    .writeups-section .card {
-        height: auto;
-        width: fit-content;
-        max-width: 100%;
-    }
-
-    .writeups-section .card img {
-        width: auto;
-        height: auto;
-        max-width: 100%;
-    }
-
-    .writeups-section .card .container {
-        padding: 25px;
-        height: auto;
-    }
-
-    .writeups-section .card h4 {
-        font-size: 1.6rem;
-        margin-bottom: 15px;
-    }
-
-    .writeups-section .card h4 a {
-        color: #ff3e3e;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .writeups-section .card h4 a:hover {
-        color: #ff6b6b;
-        text-decoration: underline;
-    }
-
-    .writeups-section .card p {
-        font-size: 1.1rem;
-    }
-
+    /* Contact section responsive */
     .contact-section {
-        padding: 20px 20px 40px 20px;
-        background-color: #111;
+        padding: 40px 20px 50px;
     }
 
-    .col-md-4,
+    .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 20px;
+    }
+
     .col-md-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 
-    .contact-info {
-        margin-bottom: 20px;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .g-3>* {
-        padding: 0 5px;
-    }
-
     .contact-form {
-        margin-top: 30px;
+        margin-top: 40px;
     }
-
-    .btn {
-        width: 100%;
-        padding: 12px 30px;
-    }
-
-    /* Project Detail Page Mobile */
-    .project-detail-section h1 {
-        font-size: 2rem;
-    }
-
-    .feature-card {
-        flex-direction: column;
-        gap: 30px;
-        padding: 30px 20px;
-        margin-bottom: 40px;
-    }
-
-    .feature-card.reverse {
-        flex-direction: column;
-    }
-
-    .feature-image,
-    .feature-content {
-        flex: 0 0 100%;
-    }
-
-    .feature-image img {
-        height: 200px;
-    }
-
-    .feature-content h3 {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .feature-content p {
-        text-align: center;
-    }
-
-    .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .technologies-section h2 {
-        font-size: 2rem;
-    }
-
 }
 
 /* Theme Toggle Functionality */
